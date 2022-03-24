@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS albums (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     Jack_Stauber varchar (50) Not Null,
     Shop_A_Pop_Opera varchar (100) Not Null,
-    release_date INT (2020),
+    release_date INT (20),
     sales float (0),
     Pop varchar (50) Not Null,
     PRIMARY key (id)
