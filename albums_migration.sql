@@ -11,10 +11,12 @@ Use DESCRIBE and SHOW to verify that your albums table has been successfully cre
 
 CREATE TABLE IF NOT EXISTS albums (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    Jack_Stauber varchar (50) Not Null,
-    Shop_A_Pop_Opera varchar (100) Not Null,
+    artist varchar (50) Not Null,
+    album_name varchar (100) Not Null,
     release_date INT (20),
     sales float (0),
-    Pop varchar (50) Not Null,
+    genre varchar (50) Not Null,
     PRIMARY key (id)
     );
+
+INSERT INTO albums (artist, album_name, release_date, sales, genre)
