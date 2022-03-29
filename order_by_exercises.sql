@@ -1,15 +1,29 @@
-SELECT count(emp_no)
+SELECT *
 FROM employees
-WHERE first_name = ('Irena' OR first_name = 'Vidya' OR first_name ='Maya') AND gender = 'M';
+WHERE first_name IN ('Irena', 'Vidya','Maya')
+ORDER BY first_name;
 
-SELECT count(emp_no)
+SELECT *
 FROM employees
-WHERE last_name LIKE '%E%';
+WHERE first_name IN ('Irena', 'Vidya','Maya')
+ORDER BY first_name, last_name;
 
-SELECT count(emp_no)
+SELECT *
 FROM employees
-WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
+WHERE first_name IN ('Irena', 'Vidya','Maya')
+ORDER BY last_name, first_name;
 
-SELECT count(emp_no)
+SELECT *
 FROM employees
-WHERE last_name LIKE '%q%'  AND last_name NOT LIKE '%qu%';
+WHERE last_name LIKE '%E%'
+ORDER BY emp_no;
+
+SELECT *
+FROM employees
+WHERE last_name LIKE '%E%'
+ORDER BY emp_no desc;
+
+SELECT *
+FROM employees
+WHERE first_name IN ('Irena', 'Vidya','Maya')
+ORDER BY last_name desc , first_name desc;
