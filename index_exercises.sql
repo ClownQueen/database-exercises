@@ -1,4 +1,4 @@
-DESCRIBE albums;
+CREATE index albums_name_artist
+ON albums (album_name, artist);
 
-ALTER TABLE albums
-ADD UNIQUE (album_name, artist);
+DESCRIBE albums;
