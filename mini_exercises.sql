@@ -30,10 +30,31 @@ CREATE TABLE IF NOT EXISTS user_leagues (
     FOREIGN KEY (leagues_id) REFERENCES leagues(id)
 );
 
+
+#DATABASE DESIGN EXERCISE STARTS HERE
+
+CREATE TABLE IF NOT EXISTS user (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR (50),
+    password VARCHAR (100)
+);
+
 CREATE TABLE IF NOT EXISTS user_ads (
     user_id INT(10) UNSIGNED NOT NULL,
     title VARCHAR(50),
     description VARCHAR(200),
-    categories VARCHAR(200),
     FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+CREATE TABLE IF NOT EXISTS categories(
+    category_id INT(10) UNSIGNED NOT NULL,
+    name VARCHAR(100),
+    FOREIGN KEY (category_id) REFERENCES user_ads(user_id)
+);
+
+CREATE TABLE IF NOT EXISTS ad_categories(
+    ad_id INT(10) UNSIGNED NOT NULL,
+    categories_id INT(10) UNSIGNED NOT NULL,
+    FOREIGN KEY (ad_id) REFERENCES user_ads(user_id),
+    FOREIGN KEY (categories_id) REFERENCES categories(category_id)
 );
